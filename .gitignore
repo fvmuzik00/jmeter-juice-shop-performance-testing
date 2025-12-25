@@ -1,0 +1,34 @@
+# JMeter Results
+results/*.jtl
+results/*.log
+results/dashboard/
+
+# Keep results directory structure
+!results/.gitkeep
+
+# JMeter backup files
+*.jmx.bak
+*.jmx~
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+
+# Local environment
+.env
+.env.local
+
+# Claude Code
+.claude/
