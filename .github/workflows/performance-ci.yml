@@ -1,0 +1,50 @@
+name: JMeter Performance Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Type of performance test'
+        required: true
+        default: 'load'
+        type: choice
+        options:
+          - load
+          - stress
+          - spike
+          - endurance
+
+env:
+  JMETER_VERSION: '5.6.3'
+  JAVA_VERSION: '17'
+
+jobs:
+  performance-test:
+    name: Execute Performance Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Download JMeter
+        run: |
+          wget -q https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${{ env.JMETER_VERSION }}.tgz
+          tar -xzf apache-jmeter-${{ env.JMETER_VERSION }}.tgz
+
+      - name: Run Test
+        run: |
+          ./apache-jmeter-${{ env.JMETER_VERSION }}/bin/jmeter -n \
+            -t ./tests/juice_shop_${{ github.event.inputs.test_type }}.jmx \
+            -l ./results/log.jtl
+
+      - name: Upload Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: ./results/
