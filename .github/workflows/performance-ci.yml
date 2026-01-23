@@ -42,9 +42,6 @@ jobs:
   performance-test:
     name: Execute ${{ github.event.inputs.test_type || 'load' }} Test
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -396,21 +393,6 @@ jobs:
           name: jmeter-${{ steps.config.outputs.test_type }}-results-${{ github.run_number }}
           path: ./results/
           retention-days: 30
-
-      - name: Setup Pages
-        if: always()
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages artifact
-        if: always()
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './docs'
-
-      - name: Deploy to GitHub Pages
-        if: always()
-        id: deployment
-        uses: actions/deploy-pages@v4
 
       - name: Deploy Dashboard to gh-pages branch
         if: always()
