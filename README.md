@@ -1,16 +1,16 @@
 # OWASP Juice Shop Performance Testing Framework
 
-[![Performance Tests](https://github.com/Trittton/jmeter-juice-shop-performance-testing/actions/workflows/performance-ci.yml/badge.svg)](https://github.com/Trittton/jmeter-juice-shop-performance-testing/actions)
+[![Performance Tests](https://github.com/fvmuzik00/jmeter-juice-shop-performance-testing/actions/workflows/performance-ci.yml/badge.svg)](https://github.com/fvmuzik00/jmeter-juice-shop-performance-testing/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![JMeter](https://img.shields.io/badge/JMeter-5.6.3-orange)](https://jmeter.apache.org/)
 [![Java](https://img.shields.io/badge/Java-17-red)](https://openjdk.org/)
-[![Live Report](https://img.shields.io/badge/Report-Live-green)](https://trittton.github.io/jmeter-juice-shop-performance-testing/)
+[![Live Report](https://img.shields.io/badge/Report-Live-green)](https://fvmuzik00.github.io/jmeter-juice-shop-performance-testing/)
 
 Performance testing framework for the [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) using **Apache JMeter + GitHub Actions**.
 
 ## Live Test Report
 
-View the latest automated test results: [**Live Dashboard**](https://trittton.github.io/jmeter-juice-shop-performance-testing/)
+View the latest automated test results: [**Live Dashboard**](https://fvmuzik00.github.io/jmeter-juice-shop-performance-testing/)
 
 *Reports auto-update after each test run*
 
@@ -63,7 +63,7 @@ This framework validates performance characteristics of the OWASP Juice Shop e-c
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Trittton/jmeter-juice-shop-performance-testing.git
+   git clone https://github.com/fvmuzik00/jmeter-juice-shop-performance-testing.git
    cd jmeter-juice-shop-performance-testing
    ```
 
@@ -327,6 +327,6 @@ This project is for educational and testing purposes. OWASP Juice Shop is licens
 ## Support
 
 For issues or questions:
-- Open an issue in [GitHub Issues](https://github.com/Trittton/jmeter-juice-shop-performance-testing/issues)
+- Open an issue in [GitHub Issues](https://github.com/fvmuzik00/jmeter-juice-shop-performance-testing/issues)
 - Review test plans in `tests/` folder
 - Check [JMeter Documentation](https://jmeter.apache.org/usermanual/index.html)
